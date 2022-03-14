@@ -5,8 +5,8 @@ import tushare as ts
 pro = ts.pro_api('ca0af3044cc38461f8e4ae128c9edabc12bcab9f4628f5cf6b6d863a')
 
 # 拉取数据
-df = pro.index_weekly(**{
-    "ts_code": "000001.SH",
+df = pro.index_global(**{
+    "ts_code": "",
     "trade_date": "",
     "start_date": "",
     "end_date": "",
@@ -15,15 +15,15 @@ df = pro.index_weekly(**{
 }, fields=[
     "ts_code",
     "trade_date",
-    "close",
     "open",
+    "close",
     "high",
     "low",
     "pre_close",
     "change",
     "pct_chg",
-    "vol",
-    "amount"
+    "swing",
+    "vol"
 ])
 print(df)
 

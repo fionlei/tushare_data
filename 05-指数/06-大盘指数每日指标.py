@@ -5,9 +5,9 @@ import tushare as ts
 pro = ts.pro_api('ca0af3044cc38461f8e4ae128c9edabc12bcab9f4628f5cf6b6d863a')
 
 # 拉取数据
-df = pro.index_weekly(**{
-    "ts_code": "000001.SH",
+df = pro.index_dailybasic(**{
     "trade_date": "",
+    "ts_code": "000001.SH",
     "start_date": "",
     "end_date": "",
     "limit": "",
@@ -15,15 +15,16 @@ df = pro.index_weekly(**{
 }, fields=[
     "ts_code",
     "trade_date",
-    "close",
-    "open",
-    "high",
-    "low",
-    "pre_close",
-    "change",
-    "pct_chg",
-    "vol",
-    "amount"
+    "total_mv",
+    "float_mv",
+    "total_share",
+    "float_share",
+    "free_share",
+    "turnover_rate",
+    "turnover_rate_f",
+    "pe",
+    "pe_ttm",
+    "pb"
 ])
 print(df)
 

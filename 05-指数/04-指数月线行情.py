@@ -5,7 +5,7 @@ import tushare as ts
 pro = ts.pro_api('ca0af3044cc38461f8e4ae128c9edabc12bcab9f4628f5cf6b6d863a')
 
 # 拉取数据
-df = pro.index_weekly(**{
+df = pro.index_monthly(**{
     "ts_code": "000001.SH",
     "trade_date": "",
     "start_date": "",
